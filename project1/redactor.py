@@ -2,11 +2,7 @@ import nltk
 import glob
 import re
 from nltk.corpus import wordnet
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('maxent_ne_chunker')
-nltk.download('words')
-nltk.download('wordnet')
+import os
 
 stats_list = []
 
@@ -177,7 +173,7 @@ def Update_Output(inputfiles,files_data,outputpath):
                 file_data =files_data[i]
                 # print((file_data))
                 # print(outputpath+filenames[j])
-                final_file = open(outputpath+filenames[j], "w" ,encoding="utf-8")
+                final_file = open(os.getcwd()+ '\\' + outputpath+filenames[j], "w" ,encoding="utf-8")
                 final_file.write(file_data)
                 final_file.close()
     return len(filenames)
