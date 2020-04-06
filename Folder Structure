@@ -1,0 +1,25 @@
+
+├── LICENSE             
+├── Pipfile
+├── Pipfile.lock
+├── README.md
+├── project1
+│   ├── __init__.py
+│   ├── doc1.txt
+│   ├── doc2.txt
+│   ├── files
+│   │   ├── TEXTFILE2.redacted.txt
+│   │   ├── doc1.redacted.txt
+│   │   └── doc2.redacted.txt
+│   ├── main.py
+│   ├── otherfiles
+│   │   └── TEXTFILE2.md
+│   ├── redactor.py
+│   └── stderr
+│       └── stderr.txt
+├── setup.cfg
+├── setup.py
+└── test
+    ├── __init__.py
+    ├── doc1.txt
+    └── test_redactor.py
