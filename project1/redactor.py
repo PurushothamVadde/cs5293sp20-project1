@@ -173,7 +173,8 @@ def Update_Output(inputfiles,files_data,outputpath):
                 file_data =files_data[i]
                 # print((file_data))
                 # print(outputpath+filenames[j])
-                final_file = open(os.getcwd()+ '\\' + outputpath+filenames[j], "w" ,encoding="utf-8")
+                final_file = open(os.getcwd()+'/'+outputpath+'/'+filenames[j], "w" ,encoding="utf-8")
+                # print(os.getcwd()+'/'+outputpath+'/'+filenames[j])
                 final_file.write(file_data)
                 final_file.close()
     return len(filenames)
