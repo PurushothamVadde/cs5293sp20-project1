@@ -2,6 +2,15 @@ import nltk
 import glob
 import re
 from nltk.corpus import wordnet
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+nltk.download('wordnet')
+
+
+
+
 
 stats_list = []
 

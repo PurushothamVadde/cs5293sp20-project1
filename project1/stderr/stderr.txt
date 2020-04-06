@@ -1,12 +1,8 @@
 The count of redacted_names : 19
 The count of redacted_names : 7
-The count of redacted_names : 33
 The count of redacted_gender : 12
 The count of redacted_gender : 11
-The count of redacted_gender : 67
-The count of redacted_dates : 2
 The count of redacted_dates : 2
 The count of redacted_dates : 2
 The count of redacted_concept : 67
 The count of redacted_concept : 65
-The count of redacted_concept : 72
