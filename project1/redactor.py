@@ -8,10 +8,6 @@ nltk.download('maxent_ne_chunker')
 nltk.download('words')
 nltk.download('wordnet')
 
-
-
-
-
 stats_list = []
 
 def Reading_input(inputfiles):
