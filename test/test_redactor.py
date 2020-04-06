@@ -71,14 +71,6 @@ def test_redact_concept():
                 counter += 1
     assert counter is not None
 
-#     x = str( 'dfdsfds')
-#
-# def test_Update_Output():
-#     list = (redactor.Reading_input(files))
-#     path = "files\\"
-#     print( redactor.Update_Output(files,list,path))
-#
-
 
 def test_redacted_stats():
     a = redactor.Reading_input(files)
