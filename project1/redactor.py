@@ -14,9 +14,9 @@ def Reading_input(inputfiles):
     for i in range(len(files)):
         # print(files[i])
         input_files = glob.glob(files[i])
-        # print(input_files)
+        # print(input_files1)
         for j in range(len(input_files)):
-            # print(input_files[j])
+            # print(input_files1[j])
             data = open(input_files[j]).read()
             # print(data)
             files_data.append(data)
@@ -165,23 +165,29 @@ def Update_Output(inputfiles,files_data,outputpath):
             if '\\' in input_files[j]:
                 input_files[j]= input_files[j].split("\\")
                 input_files[j] = input_files[j][1]
+                # print(input_files[j])
             filenames.append(input_files[j])
 
     for i in range(len(files_data)):
         for j in range(len(filenames)):
             if i==j:
                 file_data =files_data[i]
-                # print((file_data))
+                # print((filenames[i]))
+                path1 = (os.getcwd())
                 # print(outputpath+filenames[j])
-                final_file = open(os.getcwd()+'/'+outputpath+'/'+filenames[j], "w" ,encoding="utf-8")
-                # print(os.getcwd()+'/'+outputpath+'/'+filenames[j])
+                path2 = (outputpath+'/'+filenames[j])
+                final_file = open(os.path.join(path1,path2), "w" ,encoding="utf-8")
+                # print(os.path.join(path1,path2))
                 final_file.write(file_data)
                 final_file.close()
     return len(filenames)
 
 
 def Update_Redacted_stats(stats_list=stats_list):
-    file = open("stderr/stderr.txt", "w")
+
+    path = ('stderr/stderr.txt')
+    # print(os.path.join(path1,path2))
+    file = open(path, "w", encoding="utf-8")
     for i in range(len(stats_list)):
         file.write(stats_list[i])
         file.write("\n")
