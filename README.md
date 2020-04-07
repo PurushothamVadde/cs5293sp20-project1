@@ -103,7 +103,12 @@ final_file = open(os.path.join(path1,path2), "w" ,encoding="utf-8")
  final_file.close()
 
 
-##**Update_Redacted_stats(stats_list=stats_list)**
+## **Update_Redacted_stats(stats_list=stats_list)**
+The Update_Redacted_stats(stats_list=stats_list) method takes the input as the stats_list which contain the data of redacted text count, we are creating the stderr.txt file and writing the stats_list data into the stderr.txt file.
+>file.write(stats_list[i]) \
+file.close()
+
+
 
 
 
