@@ -179,7 +179,7 @@ assert stats_list is not None
 ## 4.Assumptions/Bugs:
 
 - In this project i assumed that the date will be in below format any dates aprt from the below format wont be redacted inthis project.
-1.March 26, 1930
+1.March 26, 1930 \
 2.26 March, 1930
 
 
