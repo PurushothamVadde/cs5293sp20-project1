@@ -87,10 +87,23 @@ the redacted_stats method takes the count and the redacted type added to the sta
 The Update_output method takes the inputfiles,files_data,outputpath 3 arguments as input 
 
 - The inputfiles contain the files list we read the names of each file and update the each file names as below adding the .redacted in the file name
->if '.txt' in  input_files[j]: 
->>input_files[j] = input_files[j].replace(".txt", ".redacted.txt") 
->if '.md' in input_files[j]: 
->>input_files[j] = input_files[j].replace(".md", ".redacted.txt") 
+>if '.txt' in  input_files[j] \
+input_files[j] = input_files[j].replace(".txt", ".redacted.txt") \
+if '.md' in input_files[j] \
+input_files[j] = input_files[j].replace(".md", ".redacted.txt") 
+
+- the outputpath arugument has folder name where the output redacted files will be stored the path will accessed by using the os package
+and below code is used to open the path and create the readacted text files.
+>path1 = (os.getcwd()) \
+path2 = (outputpath+'/'+filenames[j]) \
+final_file = open(os.path.join(path1,path2), "w" ,encoding="utf-8")
+
+-once the text files are created and opened the files_data contain the list of redacted data, we will iterate through the each element in the list and write the data into redacted text files.
+>final_file.write(file_data) \
+ final_file.close()
+
+
+##**Update_Redacted_stats(stats_list=stats_list)**
 
 
 
