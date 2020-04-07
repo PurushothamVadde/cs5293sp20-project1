@@ -39,7 +39,14 @@ The main.py accept the multiple input arguments, the project1.py is imported int
  After flattening the nested list by using the **glob** package we read the files names which are in the list, we read the data from each file and we append it to the list called file_data.
  
  ## **redact_names(files_data)**
- The redact_names(file_data) method takes the input argument as file_data which is from the Reading_input method, the file_data is a list of size with number of input files, we will iterate through each element[list] in the list and convert the each list into words using **nltk.word_tokenize()** the tokenize words are sent to the **nltk.pos_tag()** which tags the words based on tags and the tag words are passed to the **nltk.ne_chunk** which convert the tagged words into chunk based on label example PERSON ,ORGANIZATION etc. from the labeled chunks we select the chunk with label of PERSON which contain the names.we take the person names into the list and based on the list we replace the names in the text with '\u2588' so that the names will be redacted. after execution of the redacted_names method we will get the list with redacted names.
+ The redact_names(file_data) method takes the input argument as file_data which is from the Reading_input method, the file_data is a list of size with number of input files, we will iterate through each element[list] in the list and convert the each list into words using **nltk.word_tokenize()** the tokenize words are sent to the **nltk.pos_tag()** which tags the words based on tags and the tag words are passed to the **nltk.ne_chunk** which convert the tagged words into chunk based on label example PERSON ,ORGANIZATION etc
+ 
+ >words = nltk.word_tokenize(temp_file)  \
+  tagged = nltk.pos_tag(words)    \
+  namedEnt = nltk.ne_chunk(tagged)   \
+  chunk.label() == 'PERSON'
+  
+from the labeled chunks we select the tree with label of PERSON which contain the names.we take the person names into the list and based on the list we replace the names in the text with '\u2588' so that the names will be redacted. after execution of the redacted_names method we will get the list with redacted names.
  
  ## **redact_gender(files_data)**
  
@@ -56,7 +63,37 @@ The main.py accept the multiple input arguments, the project1.py is imported int
 > temp_dates = re.findall(r"\s\d\d\s\w*\s\d\d\d\d", temp_file)
 
 We will find the dates which matches the above regular expression and redacted with '\u2588'.
+
+
+## **redact_concept(files_data,concept)**
+The Redact_concept method takes the redacted_dates list and a concept word as input parameter, By using the **wordnet.synsets(concept)**
+method from nltk we will ge the all synonym words for the concept word and stored in synonyms_list, we will iterate through the each element[list] in the nested list and we convert the each element list into token sentences by using the below method in nltk.
+
+>token_sent = nltk.sent_tokenize(temp_file)
+
+if any sentence in the token_sent has the word in the synonyms_list the sentence will be redacted by using '\u2588'.
+
+
+## **redacted_stats(redacted_type= 'none', count=0)**
+
+The redacted_stats method takes two input arguments as input in each method the redacted text count is passed to redacted_stats method after the redaction of text is done. 
+the redacted_stats method takes the count and the redacted type added to the stats_list.
+
+>temp = "The count of " + redacted_type + " : " + str (count) \
+>stats_list.append(temp)
  
+## **Update_Output(inputfiles,files_data,outputpath)**
+
+The Update_output method takes the inputfiles,files_data,outputpath 3 arguments as input 
+
+- The inputfiles contain the files list we read the names of each file and update the each file names as below adding the .redacted in the file name
+>if '.txt' in  input_files[j]: 
+>>input_files[j] = input_files[j].replace(".txt", ".redacted.txt") 
+>if '.md' in input_files[j]: 
+>>input_files[j] = input_files[j].replace(".md", ".redacted.txt") 
+
+
+
  
  
 
