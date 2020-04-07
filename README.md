@@ -176,7 +176,29 @@ In this method we test the redacted_stats method by len of ststs_list > 0, then 
 assert stats_list is not None
 
 
+## 4.Assumptions/Bugs:
 
+- In this project i assumed that the date will be in below format any dates aprt from the below format wont be redacted inthis project.
+1.March 26, 1930
+2.26 March, 1930
+
+
+## Steps to Run project1
+
+- **Step1** \
+clone the project directory using below command 
+> git clone  https://github.com/PurushothamVadde/cs5293sp20-project1.git
+
+- **Step2** \
+Navigate to directory that we cloned from git **cs5293sp20-project1 / project1** and run the below command by providing URL
+
+>python main.py --input *.txt --input  otherfiles\TEXTFILE2.md  --names  --gender  --dates  --concept  good  --output  files  --stats
+
+- **Step3** 
+
+From **cs5293sp20-project1** run the below command to test the testcases. 
+
+> pytest -v
 
 
 
