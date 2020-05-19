@@ -187,7 +187,7 @@ assert stats_list is not None
 
 - **Step1** \
 clone the project directory using below command 
-> git clone  https://github.com/PurushothamVadde/cs5293sp20-project1.git
+> git clone https://github.com/PurushothamVadde/NLP_Redaction-of-Text-Files.git
 
 - **Step2** \
 Navigate to directory that we cloned from git **NLP_Redaction-of-Text-Files / project1** and run the below command by providing URL
