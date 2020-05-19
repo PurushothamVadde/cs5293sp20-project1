@@ -190,13 +190,13 @@ clone the project directory using below command
 > git clone  https://github.com/PurushothamVadde/cs5293sp20-project1.git
 
 - **Step2** \
-Navigate to directory that we cloned from git **cs5293sp20-project1 / project1** and run the below command by providing URL
+Navigate to directory that we cloned from git **NLP_Redaction-of-Text-Files / project1** and run the below command by providing URL
 
 >python main.py --input *.txt --input  otherfiles\TEXTFILE2.md  --names  --gender  --dates  --concept  good  --output  files  --stats
 
 - **Step3** 
 
-From **cs5293sp20-project1** run the below command to test the testcases. 
+From **NLP_Redaction-of-Text-Files** run the below command to test the testcases. 
 
 > pytest -v
 
