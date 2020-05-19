@@ -1,4 +1,4 @@
-## Text Analytics project 1  "Redaction of Text Files"
+## NLP_Redaction-of-Text-Files
 
 ## Author: Purushotham Vadde
 
